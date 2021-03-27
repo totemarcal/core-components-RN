@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, View, Text } from 'react-native';
+import { View, Text, StatusBar } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import ViewExample from './components/ViewExample'
@@ -21,12 +21,17 @@ import SectionListExample from './components/SectionListExample';
 import StatusBarExample from './components/StatusBarExample';
 import VirtualizedListExample from './components/VirtualizedListExample';
 import FlatListExample from './components/FlatListExample';
-
+import Tela1Example from './components/Tela1Example';
 function HomeScreen({ navigation }) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Core Components</Text>
-    </View>
+    <StatusBar
+        animated={true}
+        backgroundColor="#61dafb">
+
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+          <Text>Core Components</Text>
+        </View>
+    </StatusBar>
   );
 }
 
@@ -65,6 +70,7 @@ export default function App() {
         <Drawer.Screen name="Virtualized List" component={VirtualizedListExample} />
         <Drawer.Screen name="Flat List" component={FlatListExample} />
         <Drawer.Screen name="Status Bar" component={StatusBarExample} />
+        <Drawer.Screen name="Tela 1" component={Tela1Example} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
